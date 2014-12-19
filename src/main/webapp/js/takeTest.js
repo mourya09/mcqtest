@@ -7,6 +7,7 @@ function setErrorMessage(str)
 {
 	$( "#dialog-message" ).children().remove().end();
 	$( "#dialog-message" ).html('<p>'+str+'</p>');
+	$('#dialog-message').attr('title',str);
 	try{
 	$( "#dialog-message" ).dialog( "close" );
 	}catch(exp)
@@ -42,7 +43,7 @@ function isAllAnswered()
 	{
 		for(key in testData)
 		{
-			if(typeof testData[key].answer == 'undefined' && isNaN(testData[key].answer))
+			if(typeof testData[key].answer == 'undefined' || testData[key].answer == null ||  isNaN(testData[key].answer))
 			{
 				return false;
 			}
@@ -64,6 +65,38 @@ function doSubmit()
 			{
 				setErrorMessage("Please answer all the questions!!!")
 				return;
+			}else
+			{
+				var count =0;
+				//dataToSend = "{";
+				dataToSend = "";
+				for(var key in testData)
+				{
+					dataToSend = dataToSend + '&testDTO['+count+'].id=' + key +'&testDTO['+count+'].markedAnswer=' + testData[key].answer;
+					count = count + 1;
+				}
+				//dataToSend = dataToSend + "}";
+				$.ajax({url : 'saveTest.html' ,
+							cache : false,
+							data : dataToSend,
+							type : 'POST',
+							success : function(returnData) {
+							
+								if(returnData.errorMessage != null)
+								{
+									//$('#blocker').hide();	
+									alert(returnData.errorMessage);
+									return;
+								}
+								FetchData();
+								//$('#save').trigger('close');
+								
+							},error : function(xhr, textStatus, thrownError){
+							//$('#blocker').hide();	
+							alert(textStatus + ": " + thrownError);
+	
+					}});
+				
 			}
 		
 		
