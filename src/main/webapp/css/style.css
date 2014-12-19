@@ -1,0 +1,130 @@
+
+a, .title {
+    color: #b24926;
+}
+#content a:hover {
+    color: #333;
+}
+#banner-secondary p.intro {
+    float: left;
+    padding: 0;
+    width: 50%;
+}
+#banner-secondary .download-box {
+    background: linear-gradient(to right, #333 0%, #444 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    float: right;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+}
+#banner-secondary .download-box h2 {
+    color: #71d1ff;
+    font-size: 26px;
+}
+#banner-secondary .download-box .button {
+    display: block;
+    float: none;
+    margin-top: 15px;
+}
+#banner-secondary .download-box p {
+    margin: 15px 0 5px;
+}
+#banner-secondary .download-option {
+    float: left;
+    font-size: 16px;
+    width: 45%;
+}
+#banner-secondary .download-legacy {
+    float: right;
+}
+#banner-secondary .download-option span {
+    color: #71d1ff;
+    display: block;
+    font-size: 14px;
+}
+#content .dev-links {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #666;
+    border-image: none;
+    border-radius: 0 0 0 5px;
+    border-style: solid;
+    border-width: 0 0 1px 1px;
+    box-shadow: -2px 2px 10px -2px #666;
+    float: right;
+    margin: -15px -25px 0.5em 1em;
+    padding: 1em;
+    width: 30%;
+}
+#content .dev-links ul {
+    margin: 0;
+}
+#content .dev-links li {
+    background-image: none;
+    margin: 0.25em 0 0.25em 1em;
+    padding: 0;
+}
+.demo-list {
+    float: right;
+    width: 25%;
+}
+.demo-list h2 {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+#content .demo-list ul {
+    border-top: 1px solid #ccc;
+    margin: 0;
+    width: 100%;
+}
+#content .demo-list li {
+    background: none repeat scroll 0 0 #eee;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+}
+#content .demo-list .active {
+    background: none repeat scroll 0 0 #fff;
+}
+#content .demo-list a {
+    color: #3f3f3f;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 2% 4%;
+    text-decoration: none;
+    text-shadow: 1px 1px #fff;
+}
+.demo-frame {
+    height: 350px;
+    width: 70%;
+}
+.view-source a {
+    cursor: pointer;
+}
+.view-source > div {
+    display: none;
+    overflow: hidden;
+}
+@media all and (max-width: 600px) {
+#banner-secondary p.intro, #banner-secondary .download-box {
+    float: none;
+    width: auto;
+}
+#banner-secondary .download-box {
+    overflow: auto;
+}
+}
+@media only screen and (max-width: 480px) {
+#content .dev-links {
+    margin: -15px -29px 0.5em 1em;
+    overflow: hidden;
+    width: 55%;
+}
+}
