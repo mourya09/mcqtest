@@ -7,11 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import net.viralpatel.contact.dao.TestDAO;
-
-import net.viralpatel.contact.form.TestHistory;
-import net.viralpatel.contact.form.User;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +15,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.cenarius.dao.TestDAO;
+import com.cenarius.form.TestHistory;
+import com.cenarius.form.User;
 import com.google.gson.Gson;
 
 /**
@@ -114,9 +112,9 @@ public class TestTester {
 	@Test
 	public void transferData()
 	{
-		net.viralpatel.contact.dto.TestDTO[] t = new net.viralpatel.contact.dto.TestDTO[2];
-		t[0] = new net.viralpatel.contact.dto.TestDTO();
-		t[1] = new net.viralpatel.contact.dto.TestDTO();
+		com.cenarius.dto.TestDTO[] t = new com.cenarius.dto.TestDTO[2];
+		t[0] = new com.cenarius.dto.TestDTO();
+		t[1] = new com.cenarius.dto.TestDTO();
 		
 		t[0].setId(Long.parseLong("2"));
 		t[0].setMarkedAnswer(Long.parseLong("4"));
@@ -124,7 +122,7 @@ public class TestTester {
 		t[1].setMarkedAnswer(Long.parseLong("8"));
 		
 		Gson gson = new Gson();
-		System.out.println(gson.toJson(t,net.viralpatel.contact.dto.TestDTO[].class ));
+		System.out.println(gson.toJson(t,com.cenarius.dto.TestDTO[].class ));
 		
 	}
 	

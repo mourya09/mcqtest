@@ -3,17 +3,15 @@
  */
 package com.test;
 
-import net.viralpatel.contact.dto.BarChart;
-import net.viralpatel.contact.dto.Data;
-import net.viralpatel.contact.dto.DataSet;
-import net.viralpatel.contact.dto.PolarChart;
-import net.viralpatel.contact.dto.RadarChart;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.cenarius.dto.BarChart;
+import com.cenarius.dto.Data;
+import com.cenarius.dto.DataSet;
+import com.cenarius.dto.PolarChart;
 import com.google.gson.Gson;
 
 /**
@@ -70,6 +68,6 @@ public class TestCharts {
 		BarChart rc = new BarChart();
 		rc.setLabels(new String[]{"Jan","Feb","Mar","Apr"});
 		rc.setDatasets(ds);
-		System.out.println(gson.toJson(rc,RadarChart.class));
+		System.out.println(gson.toJson(rc,BarChart.class));
 	}
 }
